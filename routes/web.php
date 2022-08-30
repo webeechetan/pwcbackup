@@ -40,9 +40,9 @@ Route::get('/invite',function(Request $request){
     $event = new Event;
     $event->name = 'multipe attendees';
     $event->description = 'Event description';
-    $date = '2021-12-23';
+    $date = '2022-12-23';
     $time = '14:00:00';
-    $enddate = '2021-12-23';
+    $enddate = '2022-12-23';
     $endtime = '15:00:00';
     $event->startDateTime = Carbon::parse($date.' '.$time);
     $event->endDateTime = Carbon::parse($enddate.' '.$endtime);
@@ -56,8 +56,8 @@ Route::get('/invite',function(Request $request){
 });
 
 
-Route::get('/queue',function(){
-    
+Route::get('/queue',function(Request $request){
+    dd($request);
 });
 
 /*

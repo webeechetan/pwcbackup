@@ -246,7 +246,11 @@ class websiteController extends Controller
                         $q = $q -> whereRaw("FIND_IN_SET(".session('startup')->id.", startup_id)");
                     } else
                     {
-                        $q = $q -> orWhere('event_for', 'public');
+                        $q = $q ->where('is_active','1')
+                                ->orWhere('event_for', 'public')
+                                ->orWhere('event_for', 'pilot')
+                                ->orWhere('event_for' ,'startup')
+                                ->orWhere('event_for' ,'both');
                     }
                     return $q;
                 });

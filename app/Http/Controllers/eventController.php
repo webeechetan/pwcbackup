@@ -25,6 +25,7 @@ class eventController extends Controller
         $requestType= $request->query('request');
         if( $requestType === 'table') {
             $Event = Event::all();
+            // dd($Event);
             return response()->json($Event);
         } else return view("admin.event.list");
     }
